@@ -11,18 +11,22 @@ public class EmployeeWage {
 
 }
 class EmpCalculation {
+	public static final int IS_FULLTIME = 1;
+	public static final int IS_PARTTIME = 2;
 	public static int empHrs;
 	public void empCheck() {
 		int empCheck = (int)Math.floor(Math.random() * 10) % 3;
-		if(empCheck == 1) {
+		switch(empCheck) {
+		case IS_FULLTIME:
 			System.out.println("Employee is present and worked full-time");
 			empHrs = 8;
-		}
-		else if(empCheck == 2){
+			break;
+		case IS_PARTTIME:
 			System.out.println("Employee is present and worked part-time");
 			empHrs = 4;
-		}
-		else{
+			break;
+			
+		default:
 			System.out.println("Employee is absent");
 		}
 	}
